@@ -1,16 +1,17 @@
 package org.example;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class Student {
+public class student {
+    Logger l=Logger.getLogger("kitty");
     String name;
     int gradelvl;
     int gpa;
-
-    public Student(String name,int gradelvl,int gpa)
+    public student(String name,int gradelvl,int gpa)
     {
         this.name=name;
         this.gradelvl=gradelvl;
@@ -25,19 +26,18 @@ public class Student {
     {
         System.out.println(name+ " has a gpa of "+gpa);
     }
-    public static void main(String[] args) throws IOException
+    public static void main(String args[]) throws IOException
     {
-
+        Logger l=Logger.getLogger("kitty");
         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-        System.out.println("Enter student's name");
+        l.log(Level.INFO,() ->"Enter student's name");
         var str = br.readLine();
-        System.out.println("Enter student's gpa");
+        l.log(Level.INFO,() ->"Enter student's gpa");
         int gpa=Integer.parseInt(br.readLine());
-        System.out.println("Enter student's updated gpa");
+        l.info("Enter student's updated gpa");
         int ugpa=Integer.parseInt(br.readLine());
-        Student s1= new Student(str,gpa,ugpa);
+        student s1= new student(str,gpa,ugpa);
         s1.update(ugpa);
         s1.stud();
     }
 }
-
