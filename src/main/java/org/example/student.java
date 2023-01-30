@@ -1,3 +1,4 @@
+package org.example;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
@@ -24,7 +25,7 @@ public class Student {
 
         l.log(Level.INFO,() ->name+ " has a gpa of "+gpa);
     }
-    public static void main(String args[]) throws IOException
+    public static void main(String[] args) throws IOException
     {
         Logger l=Logger.getLogger("kitty");
         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
